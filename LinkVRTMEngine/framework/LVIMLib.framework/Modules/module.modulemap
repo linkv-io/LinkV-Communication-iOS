@@ -1,0 +1,6 @@
+framework module LVIMLib {
+  umbrella header "LVIMLib.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		20E0DA50266891AC00E292B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20E0DA4F266891AC00E292B6 /* Assets.xcassets */; };
+		20E0DA53266891AC00E292B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E0DA51266891AC00E292B6 /* LaunchScreen.storyboard */; };
+		20E0DA56266891AC00E292B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DA55266891AC00E292B6 /* main.m */; };
+		20E0DA6B266891E800E292B6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DA5E266891E700E292B6 /* ViewController.m */; };
+		20E0DA6C266891E800E292B6 /* LiveVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20E0DA5F266891E700E292B6 /* LiveVC.xib */; };
+		20E0DA6D266891E800E292B6 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DA61266891E700E292B6 /* MBProgressHUD.m */; };
+		20E0DA6E266891E800E292B6 /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 20E0DA64266891E700E292B6 /* MBProgressHUD.bundle */; };
+		20E0DA6F266891E800E292B6 /* MBProgressHUD+DS.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DA65266891E700E292B6 /* MBProgressHUD+DS.m */; };
+		20E0DA70266891E800E292B6 /* LiveVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DA68266891E700E292B6 /* LiveVC.m */; };
+		20E0DA71266891E800E292B6 /* LVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DA69266891E700E292B6 /* LVAppDelegate.m */; };
+		20E0DA772668923C00E292B6 /* LVRTMEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DA762668923C00E292B6 /* LVRTMEngine.m */; };
+		20E0DA802668927F00E292B6 /* LVRTCLive.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DA7D2668927F00E292B6 /* LVRTCLive.m */; };
+		20E0DA812668927F00E292B6 /* VideoQuality.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DA7E2668927F00E292B6 /* VideoQuality.m */; };
+		20E0DA822668927F00E292B6 /* LinkVRTCEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DA7F2668927F00E292B6 /* LinkVRTCEngine.m */; };
+		20E0DA86266892E000E292B6 /* LVIMLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DA85266892E000E292B6 /* LVIMLib.framework */; };
+		20E0DA8E2668934400E292B6 /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DA8B2668934400E292B6 /* libopencore-amrnb.a */; };
+		20E0DA8F2668934400E292B6 /* libcares.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DA8C2668934400E292B6 /* libcares.a */; };
+		20E0DA902668934400E292B6 /* libprotobuf-lite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DA8D2668934400E292B6 /* libprotobuf-lite.a */; };
+		20E0DA932668935900E292B6 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DA922668935900E292B6 /* libsqlite3.tbd */; };
+		20E0DA962668936400E292B6 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DA952668936400E292B6 /* libresolv.9.tbd */; };
+		20E0DA992668936F00E292B6 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DA982668936F00E292B6 /* libz.tbd */; };
+		20E0DA9C2668937700E292B6 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DA9B2668937700E292B6 /* libc++.tbd */; };
+		20E0DA9F2668939A00E292B6 /* LinkV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DA88266892EC00E292B6 /* LinkV.framework */; };
+		20E0DAA02668939B00E292B6 /* LinkV.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DA88266892EC00E292B6 /* LinkV.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		20E0DAA32668950100E292B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E0DAA22668950100E292B6 /* Main.storyboard */; };
+		20E0DAA62668AC9A00E292B6 /* NSObject+appSign.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DAA52668AC9A00E292B6 /* NSObject+appSign.m */; };
+		20E0DAA92668ACC200E292B6 /* AppSign.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DAA82668ACC200E292B6 /* AppSign.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		20E0DAA12668939B00E292B6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				20E0DAA02668939B00E292B6 /* LinkV.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		20E0DA40266891AA00E292B6 /* LinkVRTMEngine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LinkVRTMEngine.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		20E0DA4F266891AC00E292B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		20E0DA52266891AC00E292B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		20E0DA54266891AC00E292B6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20E0DA55266891AC00E292B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		20E0DA5E266891E700E292B6 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		20E0DA5F266891E700E292B6 /* LiveVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LiveVC.xib; sourceTree = "<group>"; };
+		20E0DA61266891E700E292B6 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		20E0DA62266891E700E292B6 /* MBProgressHUD+DS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+DS.h"; sourceTree = "<group>"; };
+		20E0DA63266891E700E292B6 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		20E0DA64266891E700E292B6 /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		20E0DA65266891E700E292B6 /* MBProgressHUD+DS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+DS.m"; sourceTree = "<group>"; };
+		20E0DA66266891E700E292B6 /* LVAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVAppDelegate.h; sourceTree = "<group>"; };
+		20E0DA67266891E700E292B6 /* LiveVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LiveVC.h; sourceTree = "<group>"; };
+		20E0DA68266891E700E292B6 /* LiveVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveVC.m; sourceTree = "<group>"; };
+		20E0DA69266891E700E292B6 /* LVAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVAppDelegate.m; sourceTree = "<group>"; };
+		20E0DA6A266891E800E292B6 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		20E0DA752668923C00E292B6 /* LVRTMEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVRTMEngine.h; sourceTree = "<group>"; };
+		20E0DA762668923C00E292B6 /* LVRTMEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVRTMEngine.m; sourceTree = "<group>"; };
+		20E0DA7A2668927F00E292B6 /* LinkVRTCEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkVRTCEngine.h; sourceTree = "<group>"; };
+		20E0DA7B2668927F00E292B6 /* LVRTCLive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVRTCLive.h; sourceTree = "<group>"; };
+		20E0DA7C2668927F00E292B6 /* VideoQuality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoQuality.h; sourceTree = "<group>"; };
+		20E0DA7D2668927F00E292B6 /* LVRTCLive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVRTCLive.m; sourceTree = "<group>"; };
+		20E0DA7E2668927F00E292B6 /* VideoQuality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoQuality.m; sourceTree = "<group>"; };
+		20E0DA7F2668927F00E292B6 /* LinkVRTCEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkVRTCEngine.m; sourceTree = "<group>"; };
+		20E0DA85266892E000E292B6 /* LVIMLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LVIMLib.framework; sourceTree = "<group>"; };
+		20E0DA88266892EC00E292B6 /* LinkV.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LinkV.framework; sourceTree = "<group>"; };
+		20E0DA8B2668934400E292B6 /* libopencore-amrnb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libopencore-amrnb.a"; path = "LinkVRTMEngine/framework/LVIMLib.framework/libopencore-amrnb.a"; sourceTree = "<group>"; };
+		20E0DA8C2668934400E292B6 /* libcares.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcares.a; path = LinkVRTMEngine/framework/LVIMLib.framework/libcares.a; sourceTree = "<group>"; };
+		20E0DA8D2668934400E292B6 /* libprotobuf-lite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libprotobuf-lite.a"; path = "LinkVRTMEngine/framework/LVIMLib.framework/libprotobuf-lite.a"; sourceTree = "<group>"; };
+		20E0DA922668935900E292B6 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		20E0DA952668936400E292B6 /* libresolv.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.9.tbd; path = usr/lib/libresolv.9.tbd; sourceTree = SDKROOT; };
+		20E0DA982668936F00E292B6 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		20E0DA9B2668937700E292B6 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		20E0DAA22668950100E292B6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		20E0DAA42668AC9A00E292B6 /* NSObject+appSign.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+appSign.h"; sourceTree = "<group>"; };
+		20E0DAA52668AC9A00E292B6 /* NSObject+appSign.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+appSign.m"; sourceTree = "<group>"; };
+		20E0DAA72668ACC200E292B6 /* AppSign.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppSign.h; sourceTree = "<group>"; };
+		20E0DAA82668ACC200E292B6 /* AppSign.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppSign.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		20E0DA3D266891AA00E292B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20E0DA9C2668937700E292B6 /* libc++.tbd in Frameworks */,
+				20E0DA992668936F00E292B6 /* libz.tbd in Frameworks */,
+				20E0DA962668936400E292B6 /* libresolv.9.tbd in Frameworks */,
+				20E0DA932668935900E292B6 /* libsqlite3.tbd in Frameworks */,
+				20E0DA8E2668934400E292B6 /* libopencore-amrnb.a in Frameworks */,
+				20E0DA9F2668939A00E292B6 /* LinkV.framework in Frameworks */,
+				20E0DA8F2668934400E292B6 /* libcares.a in Frameworks */,
+				20E0DA902668934400E292B6 /* libprotobuf-lite.a in Frameworks */,
+				20E0DA86266892E000E292B6 /* LVIMLib.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		20E0DA37266891AA00E292B6 = {
+			isa = PBXGroup;
+			children = (
+				20E0DA42266891AA00E292B6 /* LinkVRTMEngine */,
+				20E0DA41266891AA00E292B6 /* Products */,
+				20E0DA8A2668934300E292B6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		20E0DA41266891AA00E292B6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				20E0DA40266891AA00E292B6 /* LinkVRTMEngine.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		20E0DA42266891AA00E292B6 /* LinkVRTMEngine */ = {
+			isa = PBXGroup;
+			children = (
+				20E0DA84266892C600E292B6 /* framework */,
+				20E0DA742668922C00E292B6 /* LVRTMEngine */,
+				20E0DA67266891E700E292B6 /* LiveVC.h */,
+				20E0DA68266891E700E292B6 /* LiveVC.m */,
+				20E0DA5F266891E700E292B6 /* LiveVC.xib */,
+				20E0DAA22668950100E292B6 /* Main.storyboard */,
+				20E0DA66266891E700E292B6 /* LVAppDelegate.h */,
+				20E0DA69266891E700E292B6 /* LVAppDelegate.m */,
+				20E0DA60266891E700E292B6 /* MBProgressHUD */,
+				20E0DA6A266891E800E292B6 /* ViewController.h */,
+				20E0DA5E266891E700E292B6 /* ViewController.m */,
+				20E0DA4F266891AC00E292B6 /* Assets.xcassets */,
+				20E0DA51266891AC00E292B6 /* LaunchScreen.storyboard */,
+				20E0DA54266891AC00E292B6 /* Info.plist */,
+				20E0DA55266891AC00E292B6 /* main.m */,
+				20E0DAA42668AC9A00E292B6 /* NSObject+appSign.h */,
+				20E0DAA52668AC9A00E292B6 /* NSObject+appSign.m */,
+				20E0DAA72668ACC200E292B6 /* AppSign.h */,
+				20E0DAA82668ACC200E292B6 /* AppSign.m */,
+			);
+			path = LinkVRTMEngine;
+			sourceTree = "<group>";
+		};
+		20E0DA60266891E700E292B6 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				20E0DA61266891E700E292B6 /* MBProgressHUD.m */,
+				20E0DA62266891E700E292B6 /* MBProgressHUD+DS.h */,
+				20E0DA63266891E700E292B6 /* MBProgressHUD.h */,
+				20E0DA64266891E700E292B6 /* MBProgressHUD.bundle */,
+				20E0DA65266891E700E292B6 /* MBProgressHUD+DS.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		20E0DA742668922C00E292B6 /* LVRTMEngine */ = {
+			isa = PBXGroup;
+			children = (
+				20E0DA792668926C00E292B6 /* LinkV_RTC */,
+				20E0DA752668923C00E292B6 /* LVRTMEngine.h */,
+				20E0DA762668923C00E292B6 /* LVRTMEngine.m */,
+			);
+			path = LVRTMEngine;
+			sourceTree = "<group>";
+		};
+		20E0DA792668926C00E292B6 /* LinkV_RTC */ = {
+			isa = PBXGroup;
+			children = (
+				20E0DA7A2668927F00E292B6 /* LinkVRTCEngine.h */,
+				20E0DA7F2668927F00E292B6 /* LinkVRTCEngine.m */,
+				20E0DA7B2668927F00E292B6 /* LVRTCLive.h */,
+				20E0DA7D2668927F00E292B6 /* LVRTCLive.m */,
+				20E0DA7C2668927F00E292B6 /* VideoQuality.h */,
+				20E0DA7E2668927F00E292B6 /* VideoQuality.m */,
+			);
+			path = LinkV_RTC;
+			sourceTree = "<group>";
+		};
+		20E0DA84266892C600E292B6 /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				20E0DA88266892EC00E292B6 /* LinkV.framework */,
+				20E0DA85266892E000E292B6 /* LVIMLib.framework */,
+			);
+			path = framework;
+			sourceTree = "<group>";
+		};
+		20E0DA8A2668934300E292B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				20E0DA9B2668937700E292B6 /* libc++.tbd */,
+				20E0DA982668936F00E292B6 /* libz.tbd */,
+				20E0DA952668936400E292B6 /* libresolv.9.tbd */,
+				20E0DA922668935900E292B6 /* libsqlite3.tbd */,
+				20E0DA8C2668934400E292B6 /* libcares.a */,
+				20E0DA8B2668934400E292B6 /* libopencore-amrnb.a */,
+				20E0DA8D2668934400E292B6 /* libprotobuf-lite.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		20E0DA3F266891AA00E292B6 /* LinkVRTMEngine */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20E0DA59266891AC00E292B6 /* Build configuration list for PBXNativeTarget "LinkVRTMEngine" */;
+			buildPhases = (
+				20E0DA3C266891AA00E292B6 /* Sources */,
+				20E0DA3D266891AA00E292B6 /* Frameworks */,
+				20E0DA3E266891AA00E292B6 /* Resources */,
+				20E0DAA12668939B00E292B6 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LinkVRTMEngine;
+			productName = LinkVRTMEngine;
+			productReference = 20E0DA40266891AA00E292B6 /* LinkVRTMEngine.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		20E0DA38266891AA00E292B6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					20E0DA3F266891AA00E292B6 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 20E0DA3B266891AA00E292B6 /* Build configuration list for PBXProject "LinkVRTMEngine" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 20E0DA37266891AA00E292B6;
+			productRefGroup = 20E0DA41266891AA00E292B6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				20E0DA3F266891AA00E292B6 /* LinkVRTMEngine */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		20E0DA3E266891AA00E292B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20E0DA53266891AC00E292B6 /* LaunchScreen.storyboard in Resources */,
+				20E0DAA32668950100E292B6 /* Main.storyboard in Resources */,
+				20E0DA6E266891E800E292B6 /* MBProgressHUD.bundle in Resources */,
+				20E0DA50266891AC00E292B6 /* Assets.xcassets in Resources */,
+				20E0DA6C266891E800E292B6 /* LiveVC.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		20E0DA3C266891AA00E292B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20E0DA6F266891E800E292B6 /* MBProgressHUD+DS.m in Sources */,
+				20E0DA802668927F00E292B6 /* LVRTCLive.m in Sources */,
+				20E0DA822668927F00E292B6 /* LinkVRTCEngine.m in Sources */,
+				20E0DA6B266891E800E292B6 /* ViewController.m in Sources */,
+				20E0DA71266891E800E292B6 /* LVAppDelegate.m in Sources */,
+				20E0DA6D266891E800E292B6 /* MBProgressHUD.m in Sources */,
+				20E0DAA92668ACC200E292B6 /* AppSign.m in Sources */,
+				20E0DA70266891E800E292B6 /* LiveVC.m in Sources */,
+				20E0DA812668927F00E292B6 /* VideoQuality.m in Sources */,
+				20E0DA772668923C00E292B6 /* LVRTMEngine.m in Sources */,
+				20E0DA56266891AC00E292B6 /* main.m in Sources */,
+				20E0DAA62668AC9A00E292B6 /* NSObject+appSign.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		20E0DA51266891AC00E292B6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20E0DA52266891AC00E292B6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		20E0DA57266891AC00E292B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		20E0DA58266891AC00E292B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		20E0DA5A266891AC00E292B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 56KLR2NSW8;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LinkVRTMEngine/framework",
+				);
+				INFOPLIST_FILE = LinkVRTMEngine/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LinkVRTMEngine/framework/LVIMLib.framework",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cmcm.twoo.LinkVRTMEngine;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		20E0DA5B266891AC00E292B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 56KLR2NSW8;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LinkVRTMEngine/framework",
+				);
+				INFOPLIST_FILE = LinkVRTMEngine/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/LinkVRTMEngine/framework/LVIMLib.framework",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.cmcm.twoo.LinkVRTMEngine;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		20E0DA3B266891AA00E292B6 /* Build configuration list for PBXProject "LinkVRTMEngine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20E0DA57266891AC00E292B6 /* Debug */,
+				20E0DA58266891AC00E292B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20E0DA59266891AC00E292B6 /* Build configuration list for PBXNativeTarget "LinkVRTMEngine" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20E0DA5A266891AC00E292B6 /* Debug */,
+				20E0DA5B266891AC00E292B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 20E0DA38266891AA00E292B6 /* Project object */;
+}

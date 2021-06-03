@@ -1,0 +1,6 @@
+framework module LinkV {
+  umbrella header "LinkV.h"
+
+  export *
+  module * { export * }
+}
