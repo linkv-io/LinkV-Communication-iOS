@@ -22,9 +22,6 @@
 		20E0DA812668927F00E292B6 /* VideoQuality.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DA7E2668927F00E292B6 /* VideoQuality.m */; };
 		20E0DA822668927F00E292B6 /* LinkVRTCEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DA7F2668927F00E292B6 /* LinkVRTCEngine.m */; };
 		20E0DA86266892E000E292B6 /* LVIMLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DA85266892E000E292B6 /* LVIMLib.framework */; };
-		20E0DA8E2668934400E292B6 /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DA8B2668934400E292B6 /* libopencore-amrnb.a */; };
-		20E0DA8F2668934400E292B6 /* libcares.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DA8C2668934400E292B6 /* libcares.a */; };
-		20E0DA902668934400E292B6 /* libprotobuf-lite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DA8D2668934400E292B6 /* libprotobuf-lite.a */; };
 		20E0DA932668935900E292B6 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DA922668935900E292B6 /* libsqlite3.tbd */; };
 		20E0DA962668936400E292B6 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DA952668936400E292B6 /* libresolv.9.tbd */; };
 		20E0DA992668936F00E292B6 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DA982668936F00E292B6 /* libz.tbd */; };
@@ -34,6 +31,9 @@
 		20E0DAA32668950100E292B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E0DAA22668950100E292B6 /* Main.storyboard */; };
 		20E0DAA62668AC9A00E292B6 /* NSObject+appSign.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DAA52668AC9A00E292B6 /* NSObject+appSign.m */; };
 		20E0DAA92668ACC200E292B6 /* AppSign.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DAA82668ACC200E292B6 /* AppSign.m */; };
+		20E0DAAD2668BAD200E292B6 /* libcares.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DAAA2668BAD200E292B6 /* libcares.a */; };
+		20E0DAAE2668BAD200E292B6 /* libprotobuf-lite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DAAB2668BAD200E292B6 /* libprotobuf-lite.a */; };
+		20E0DAAF2668BAD200E292B6 /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DAAC2668BAD200E292B6 /* libopencore-amrnb.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -90,6 +90,9 @@
 		20E0DAA52668AC9A00E292B6 /* NSObject+appSign.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+appSign.m"; sourceTree = "<group>"; };
 		20E0DAA72668ACC200E292B6 /* AppSign.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppSign.h; sourceTree = "<group>"; };
 		20E0DAA82668ACC200E292B6 /* AppSign.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppSign.m; sourceTree = "<group>"; };
+		20E0DAAA2668BAD200E292B6 /* libcares.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcares.a; sourceTree = "<group>"; };
+		20E0DAAB2668BAD200E292B6 /* libprotobuf-lite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libprotobuf-lite.a"; sourceTree = "<group>"; };
+		20E0DAAC2668BAD200E292B6 /* libopencore-amrnb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrnb.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,11 +103,11 @@
 				20E0DA9C2668937700E292B6 /* libc++.tbd in Frameworks */,
 				20E0DA992668936F00E292B6 /* libz.tbd in Frameworks */,
 				20E0DA962668936400E292B6 /* libresolv.9.tbd in Frameworks */,
+				20E0DAAD2668BAD200E292B6 /* libcares.a in Frameworks */,
+				20E0DAAF2668BAD200E292B6 /* libopencore-amrnb.a in Frameworks */,
+				20E0DAAE2668BAD200E292B6 /* libprotobuf-lite.a in Frameworks */,
 				20E0DA932668935900E292B6 /* libsqlite3.tbd in Frameworks */,
-				20E0DA8E2668934400E292B6 /* libopencore-amrnb.a in Frameworks */,
 				20E0DA9F2668939A00E292B6 /* LinkV.framework in Frameworks */,
-				20E0DA8F2668934400E292B6 /* libcares.a in Frameworks */,
-				20E0DA902668934400E292B6 /* libprotobuf-lite.a in Frameworks */,
 				20E0DA86266892E000E292B6 /* LVIMLib.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -193,6 +196,9 @@
 		20E0DA84266892C600E292B6 /* framework */ = {
 			isa = PBXGroup;
 			children = (
+				20E0DAAA2668BAD200E292B6 /* libcares.a */,
+				20E0DAAC2668BAD200E292B6 /* libopencore-amrnb.a */,
+				20E0DAAB2668BAD200E292B6 /* libprotobuf-lite.a */,
 				20E0DA88266892EC00E292B6 /* LinkV.framework */,
 				20E0DA85266892E000E292B6 /* LVIMLib.framework */,
 			);
@@ -446,6 +452,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/LinkVRTMEngine/framework/LVIMLib.framework",
+					"$(PROJECT_DIR)/LinkVRTMEngine/framework",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cmcm.twoo.LinkVRTMEngine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -473,6 +480,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/LinkVRTMEngine/framework/LVIMLib.framework",
+					"$(PROJECT_DIR)/LinkVRTMEngine/framework",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.cmcm.twoo.LinkVRTMEngine;
 				PRODUCT_NAME = "$(TARGET_NAME)";
