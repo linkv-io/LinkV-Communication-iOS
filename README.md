@@ -13,11 +13,11 @@
 
 把整个项目从[github](https://github.com/linkv-io/LinkV-RTM-iOS/tree/main/LinkVRTMEngine)下载下来之后，把`framework`和`LVRTMEngine`拖入到你的项目中
 
-![image-20210603153025663](/Users/wing/Library/Application Support/typora-user-images/image-20210603153025663.png)
+![image-20210603153025663](./LinkVRTMEngine/snapshot/sdk_folder.png)
 
 设置LinkV.framework为`Embed & Sign`
 
-![image-20210603154715691](/Users/wing/Library/Application Support/typora-user-images/image-20210603154715691.png)
+![image-20210603154715691](./LinkVRTMEngine/snapshot/embed&sign.png)
 
 ## 添加权限和关闭ATS
 
@@ -49,7 +49,7 @@
 
 `TARGETS` → `Build Settings` 搜索 `bitcode` ，将`Enable Bitcode`设置为 **NO**
 
-![bitcode](/Users/wing/Desktop/文件管理/new/LinkV-RTM-iOS/LinkVRTMEngine/snapshot/bitcode.jpeg)
+![bitcode](./LinkVRTMEngine/snapshot/bitcode.jpeg)
 
 # 二、 如何使用LVRTMEngine
 
