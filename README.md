@@ -53,7 +53,7 @@
 
 `TARGETS` → `Build Settings` 搜索 `bitcode` ，将`Enable Bitcode`设置为 **NO**
 
-![bitcode](./LinkVRTMEngine/snapshot/bitcode.jpeg)
+![bitcode](./LVCEngine/snapshot/bitcode.jpeg)
 
 # 二、 如何使用LVCEngine
 
