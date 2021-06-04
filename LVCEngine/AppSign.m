@@ -22,7 +22,7 @@
 + (void)queryIMToken:(NSString *)uid complete:(void(^)(NSString *imToken))complete {
     if (!complete) return;
     
-    NSMutableURLRequest *requestM = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://catchu-im-api.fusionv.com/api/rest/getWebimToken"]];
+    NSMutableURLRequest *requestM = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://catchu-im-api.fusionv.com/api/rest/getWebimTestToken"]];
     [requestM setValue:@"1234" forHTTPHeaderField:@"userid"];
     
     [[[NSURLSession sharedSession] dataTaskWithRequest:requestM completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
