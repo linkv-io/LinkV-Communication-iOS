@@ -1,6 +1,10 @@
-# LinkV-RTM-iOS
+# LinkV-Communication
 
-此SDK主要是对[LinkV音视频SDK](https://doc-zh.linkv.sg/ios/rtc/overview)和[IM SDK](https://doc-zh.linkv.sg/ios/im/overview)的一层封装，使其接口更加简单易用。所有封装的代码都在`LVRTMEngine`文件夹下，且全部开源，您可以根据您的需求任意修改里面的代码实现。当然您也可以在项目中直接引用[LinkV音视频SDK](https://doc-zh.linkv.sg/ios/rtc/overview)和[IM SDK](https://doc-zh.linkv.sg/ios/im/overview)相关的类来实现更加复杂的功能。
+此SDK主要是对[LinkV音视频SDK](https://doc-zh.linkv.sg/ios/rtc/overview)和[IM SDK](https://doc-zh.linkv.sg/ios/im/overview)的一层封装，使其接口更加简单易用。所有封装的代码都在`LVCEngine`文件夹下，且全部开源，您可以根据您的需求任意修改里面的代码实现。当然您也可以在项目中直接引用[LinkV音视频SDK](https://doc-zh.linkv.sg/ios/rtc/overview)和[IM SDK](https://doc-zh.linkv.sg/ios/im/overview)相关的类来实现更加复杂的功能。
+
+如果你想要实现类似如下的一对一视频聊天，则使用此SDK能让你事半功倍。一对一视频聊天Demo源码：[StrangerChat](https://github.com/linkv-io/StrangerChat)
+
+![](./LVCEngine/snapshot/strangerChat.png)
 
 # 一、如何集成
 
@@ -11,13 +15,13 @@
 
 ## 下载SDK
 
-把整个项目从[github](https://github.com/linkv-io/LinkV-RTM-iOS/tree/main/LinkVRTMEngine)下载下来之后，把`framework`和`LVRTMEngine`拖入到你的项目中
+把整个项目从[github](https://github.com/linkv-io/LinkV-RTM-iOS/tree/main/LinkVRTMEngine)下载下来之后，把`framework`和`LVCEngine`拖入到你的项目中
 
-![image-20210603153025663](./LinkVRTMEngine/snapshot/sdk_folder.png)
+![image-20210603153025663](./LVCEngine/snapshot/sdk_folder.png)
 
 设置LinkV.framework为`Embed & Sign`
 
-![image-20210603154715691](./LinkVRTMEngine/snapshot/embed&sign.png)
+![image-20210603154715691](./LVCEngine/snapshot/embed&sign.png)
 
 ## 添加权限和关闭ATS
 
@@ -51,7 +55,7 @@
 
 ![bitcode](./LinkVRTMEngine/snapshot/bitcode.jpeg)
 
-# 二、 如何使用LVRTMEngine
+# 二、 如何使用LVCEngine
 
 ## 前提条件
 
@@ -63,7 +67,7 @@
 ## 2.1 初始化SDK
 
 ```objective-c
-self.engine = [LVRTMEngine createEngineWithAppId:[AppSign your_app_id] appKey:[AppSign your_app_key] isTestEnv:NO completion:^(NSInteger code) {
+self.engine = [LVCEngine createEngineWithAppId:[AppSign your_app_id] appKey:[AppSign your_app_key] isTestEnv:NO completion:^(NSInteger code) {
         if (code == 0) {
           // 认证成功
         } else {
@@ -131,7 +135,7 @@ self.engine = [LVRTMEngine createEngineWithAppId:[AppSign your_app_id] appKey:[A
     }];
 ```
 
-# 三、使用LVRTMEngine实现直播间功能
+# 三、使用LVCEngine实现直播间功能
 
 ## 3.1 登录房间
 
