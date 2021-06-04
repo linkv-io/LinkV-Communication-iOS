@@ -34,6 +34,8 @@
 		20E0DAAD2668BAD200E292B6 /* libcares.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DAAA2668BAD200E292B6 /* libcares.a */; };
 		20E0DAAE2668BAD200E292B6 /* libprotobuf-lite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DAAB2668BAD200E292B6 /* libprotobuf-lite.a */; };
 		20E0DAAF2668BAD200E292B6 /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DAAC2668BAD200E292B6 /* libopencore-amrnb.a */; };
+		20E0DAD52669CF0200E292B6 /* NV12.metal in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DAD32669CF0100E292B6 /* NV12.metal */; };
+		20E0DAD62669CF0200E292B6 /* RGB.metal in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DAD42669CF0100E292B6 /* RGB.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -93,6 +95,9 @@
 		20E0DAAA2668BAD200E292B6 /* libcares.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcares.a; sourceTree = "<group>"; };
 		20E0DAAB2668BAD200E292B6 /* libprotobuf-lite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libprotobuf-lite.a"; sourceTree = "<group>"; };
 		20E0DAAC2668BAD200E292B6 /* libopencore-amrnb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrnb.a"; sourceTree = "<group>"; };
+		20E0DAD22669CF0100E292B6 /* MTCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCommon.h; sourceTree = "<group>"; };
+		20E0DAD32669CF0100E292B6 /* NV12.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = NV12.metal; sourceTree = "<group>"; };
+		20E0DAD42669CF0100E292B6 /* RGB.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = RGB.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +178,9 @@
 		20E0DA742668922C00E292B6 /* LVRTMEngine */ = {
 			isa = PBXGroup;
 			children = (
+				20E0DAD22669CF0100E292B6 /* MTCommon.h */,
+				20E0DAD32669CF0100E292B6 /* NV12.metal */,
+				20E0DAD42669CF0100E292B6 /* RGB.metal */,
 				20E0DA792668926C00E292B6 /* LinkV_RTC */,
 				20E0DA752668923C00E292B6 /* LVRTMEngine.h */,
 				20E0DA762668923C00E292B6 /* LVRTMEngine.m */,
@@ -294,7 +302,9 @@
 				20E0DA6F266891E800E292B6 /* MBProgressHUD+DS.m in Sources */,
 				20E0DA802668927F00E292B6 /* LVRTCLive.m in Sources */,
 				20E0DA822668927F00E292B6 /* LinkVRTCEngine.m in Sources */,
+				20E0DAD62669CF0200E292B6 /* RGB.metal in Sources */,
 				20E0DA6B266891E800E292B6 /* ViewController.m in Sources */,
+				20E0DAD52669CF0200E292B6 /* NV12.metal in Sources */,
 				20E0DA71266891E800E292B6 /* LVAppDelegate.m in Sources */,
 				20E0DA6D266891E800E292B6 /* MBProgressHUD.m in Sources */,
 				20E0DAA92668ACC200E292B6 /* AppSign.m in Sources */,

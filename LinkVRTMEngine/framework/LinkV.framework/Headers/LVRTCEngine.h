@@ -2,7 +2,7 @@
 //  LVRTCEngine.h
 //  LVRTCEngine
 //
-//  Copyright © 2019年 LiveMe. All rights reserved.
+//  Copyright © 2021年 LinkV. All rights reserved.
 //
 #import <Foundation/Foundation.h>
 #import "LVRTCEngineDefines.h"
@@ -109,10 +109,34 @@ LV_EXPORT_CLASS
                    uid:(NSString *)uid
                    sei:(NSString *)sei;
 
+/// SDK 内部采集数据回调
+/// @param videoFrame 视频原始数据
+/// @return 处理后的视频数据，SDK 内部不会调用 CFRetain 增加引用计数， 会调用 CFRelease 减少引用计数， 视频开发者创建的视频对象
+-(CMSampleBufferRef)OnCaptureVideoFrame:(CMSampleBufferRef)videoFrame;
+
 /// 用户被踢出房间
 /// @param reason 被踢原因
 /// @param roomId 房间号
 - (void)OnKickOff:(NSInteger)reason roomId:(NSString *)roomId;
+
+/// 混音播放器当前播放时长
+/// @param time_ms 播放时长
+- (void)AudioMixerCurrentPlayingTime:(int)time_ms;
+
+/// 混音播放器当前音频播放结束
+- (void)AudioMixerPlayerDidFinished;
+
+
+/// 收到视频首帧回调通知事件
+/// @param userId 视频发送者用户 ID
+/// @param streamId 流 ID，默认为空字符串，如果使用自定义视频流时为自定义视频流对应的流名称
+- (void)OnReceivedFirstVideoFrame:(NSString *)userId streamId:(NSString *)streamId;
+
+
+/// 收到音频首帧回调通知事件
+/// @param userId 音视频发送者用户 ID
+/// @param streamId 流 ID，默认为空字符串，如果使用自定义视频流时为自定义视频流对应的流名称
+- (void)OnReceivedFirstAudioFrame:(NSString *)userId streamId:(NSString *)streamId;
 
 @end
 
@@ -176,12 +200,6 @@ LV_EXPORT_CLASS
 /// @param env YES 为使用测试环境，NO 为不使用测试环境（默认为 NO）
 + (void)setUseTestEnv:(BOOL)env;
 
-
-/// 是否使用国际版本（SDK 默认使用中国版本，国内用户请不要调用）
-/// @param env YES 为国际版本，NO 为国内版本
-+ (void)setUseInternationalEnv:(BOOL)env;
-
-
 /// 设置调试的 signal  IP 地址
 /// @param ip signal IP 地址
 + (void)setDebugServerIp:(NSString *)ip;
@@ -189,6 +207,10 @@ LV_EXPORT_CLASS
 /// 设置接收到视频数据时解码的像素格式类型
 /// @param osType 像素格式类型（CVPixelFormatType）
 + (bool)setDecoderPixelType:(OSType)osType;
+
+/// 设置视频数据编码的像素格式类型
+/// @param osType 像素格式类型（CVPixelFormatType）
++ (bool)setEncoderPixelType:(OSType)osType;
 
 /// 返回 LVRTCEngine 实例对象
 + (instancetype)sharedInstance;
@@ -260,6 +282,17 @@ LV_EXPORT_CLASS
 /// @param roomId 房间 ID
 - (void)unlinkRoom:(NSString *)roomId;
 
+/// 房间之间 PK（跨房间连麦功能）
+/// @param roomId 房间 ID
+/// @param linkUserId PK 对象的 userId
+- (void)linkRoom:(NSString *)roomId linkUserId:(NSString *)linkUserId;
+
+/// 取消跨房间连麦功能
+/// @param roomId 房间 ID
+/// @param unlinkUserId 取消 pk 对象的 userId
+- (void)unlinkRoom:(NSString *)roomId unlinkUserId:(NSString *)unlinkUserId;
+
+
 /// 开始视频采集
 -(void)startCapture;
 
@@ -317,10 +350,14 @@ LV_EXPORT_CLASS
 
 /// 开始播放音乐文件及混音（声音伴奏）
 /// @param filePath 文件路径
-/// @param replace true: 只推动设置的本地音频文件，不传输麦克风收录的音频  false：音频文件内容将会和麦克风采集的音频流进行混音
+/// @param mode LVAudioMixingMode，设置混音模式
 /// @param loop 指定音频文件循环播放的次数，正整数：循环的次数 -1：无限循环
 /// @return 0 ： 方法调用成功，!0：失败
--(int)startAudioMixing:(NSString *)filePath replace:(BOOL)replace loop:(int)loop;
+-(int)startAudioMixing:(NSString*)filePath mode:(LVAudioMixingMode)mode loop:(int)loop;
+
+/// 动态调整混音模式
+/// @param mode 混音模式参数
+-(void)setAudioMixingMode:(LVAudioMixingMode)mode;
 
 /// 停止播放音乐文件及混音。请在房间内调用该方法。
 /// @return 0：方法调用成功 !0：方法调用失败
@@ -381,7 +418,7 @@ LV_EXPORT_CLASS
 
 /// 外部采集的视频数据（可以随视频附加其他信息）   注：调用 startCapture 后该方法会被忽略
 /// @param sampleBuffer 视频数据（必须是解码的视频数据）
-/// @param sei 媒体附加数据
+/// @param sei 媒体附加数据，该数据会随视频一起发送到接收端
 /// @see startCapture
 - (void)sendVideoFrame:(CMSampleBufferRef)sampleBuffer sei:(NSString*)sei;
 
@@ -398,6 +435,49 @@ LV_EXPORT_CLASS
 /// 获取美颜参数管理（美颜管理器）
 - (LVBeautyManager *)getLVBeautyManager;
 
+/// 设置回声消除音频模式
+/// @param mode 模式参数
+- (void)setAecMode:(LVAudio3AMode)mode;
+
+/// 设置降噪模式
+/// @param mode 模式参数
+- (void)setNsMode:(LVAudio3AMode)mode;
+
+/// 设置自动增益模式
+/// @param mode 模式参数
+- (void)setAgcMode:(LVAudio3AMode)mode;
+
+/// SDK 内部录制功能，目前仅支持视频编码为 H264、音频编码为 Opus 的录制，录制格式为 mkv 文件，无论录制音频还是视频请提供 mkv 后缀文件地址, eg: /tmp/recorder/hello.mkv
+/// @param userId 用户 ID
+/// @param path 文件路径
+/// @param type 音视频录制类型
+/// @return 0 : 录制成功， 其他 : 录制失败
+- (int)startRecorder:(NSString*)userId path:(NSString *)path type:(LVRecorderType)type;
+
+
+/// 停止录制
+/// @param userId 音视频用户 ID
+/// @return 0 : 停止录制成功，其他 : 停止录制失败
+- (int)stopRecorder:(NSString*)userId;
+
+
 @end
+
+
+@interface LVRTCEngine (DEPRECATED)
+
+/// 开始播放音乐文件及混音（声音伴奏）
+/// @param filePath 文件路径
+/// @param replace true: 只推动设置的本地音频文件，不传输麦克风收录的音频  false：音频文件内容将会和麦克风采集的音频流进行混音
+/// @param loop 指定音频文件循环播放的次数，正整数：循环的次数 -1：无限循环
+/// @return 0 ： 方法调用成功，!0：失败
+-(int)startAudioMixing:(NSString *)filePath replace:(BOOL)replace loop:(int)loop;
+
+/// 是否使用国际版本，该接口已废弃，SDK 内部会自动调度到国际或国内服务
+/// @param env YES 为国际版本，NO 为国内版本
++ (void)setUseInternationalEnv:(BOOL)env;
+
+@end
+
 
 NS_ASSUME_NONNULL_END

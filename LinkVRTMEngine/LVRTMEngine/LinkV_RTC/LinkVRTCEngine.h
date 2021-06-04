@@ -31,6 +31,25 @@ typedef NS_ENUM(NSInteger, VideoRotation) {
     VideoRotation_270        = 270,
 };
 
+/**
+ 音视频录制支持模式
+ */
+typedef enum : NSUInteger {
+    /**
+        仅录制音频
+     */
+    LVRecorderType_AUDIO = 0,
+    /**
+        仅录制视频
+     */
+    LVRecorderType_VIDEO,
+    /**
+        音频和视频同时录制
+     */
+    LVRecorderType_AUDIO_AND_VIDEO,
+    
+} LVRecorderType;
+
 typedef void (^LVCodeCompletion)(NSInteger code);
 
 @protocol RTCCallbackDelegate <NSObject>
@@ -78,6 +97,17 @@ typedef void (^LVCodeCompletion)(NSInteger code);
 /// @param uid 用户 id
 /// @param quality 质量
 - (void)onRemoteQualityUpdate:(NSString *_Nullable)uid quality:(VideoQuality *_Nullable)quality;
+
+/// 收到视频首帧回调通知事件
+/// @param userId 视频发送者用户 ID
+/// @param streamId 流 ID，默认为空字符串，如果使用自定义视频流时为自定义视频流对应的流名称
+- (void)OnReceivedFirstVideoFrame:(NSString *_Nullable)userId streamId:(NSString *_Nullable)streamId;
+
+
+/// 收到视频首帧回调通知事件
+/// @param userId 视频发送者用户 ID
+/// @param streamId 流 ID，默认为空字符串，如果使用自定义视频流时为自定义视频流对应的流名称
+- (void)OnReceivedFirstAudioFrame:(NSString *_Nullable)userId streamId:(NSString *_Nullable)streamId;
 
 @end
 
@@ -137,6 +167,19 @@ typedef void (^LVCodeCompletion)(NSInteger code);
  * @param userId 被控制的用户ID
  */
 - (void)setPlayVolume:(int)volume userId:(NSString *_Nullable)userId;
+
+#pragma mark - 视频录制
+/// @param userId 用户 ID
+/// @param path 文件路径
+/// @param type 音视频录制类型
+/// @return 0 : 录制成功， 其他 : 录制失败
+- (int)startRecorder:(NSString *_Nonnull)userId path:(NSString *_Nonnull)path type:(LVRecorderType)type;
+
+
+/// 停止录制
+/// @param userId 音视频用户 ID
+/// @return 0 : 停止录制成功，其他 : 停止录制失败
+- (int)stopRecorder:(NSString *_Nonnull)userId;
 
 #pragma mark 其它相关方法
 

@@ -198,6 +198,23 @@
     [[LVRTCEngine sharedInstance] setOutputVideoRotation:rotation];
 }
 
+#pragma mark - 视频录制
+/// @param userId 用户 ID
+/// @param path 文件路径
+/// @param type 音视频录制类型
+/// @return 0 : 录制成功， 其他 : 录制失败
+- (int)startRecorder:(NSString *_Nonnull)userId path:(NSString *_Nonnull)path type:(LVRecorderType)type {
+    return [[LVRTCEngine sharedInstance] startRecorder:userId path:path type:type];
+}
+
+
+/// 停止录制
+/// @param userId 音视频用户 ID
+/// @return 0 : 停止录制成功，其他 : 停止录制失败
+- (int)stopRecorder:(NSString *_Nonnull)userId {
+    return [[LVRTCEngine sharedInstance] stopRecorder:userId];
+}
+
 #pragma mark - LVRTCEngineDelegate
 /// 加入房间成功的回调
 /// @param code 加入房间是否成功错误码
@@ -349,6 +366,22 @@
 
 - (void)OnCaptureSoundLevelUpdate:(nonnull LVAudioVolume *)captureSoundLevel {
     
+}
+
+- (void)OnReceivedFirstAudioFrame:(NSString *)userId streamId:(NSString *)streamId {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if ([self.delegate respondsToSelector:@selector(OnReceivedFirstAudioFrame:streamId:)]) {
+            [self.delegate OnReceivedFirstAudioFrame:userId streamId:streamId];
+        }
+    });
+}
+
+- (void)OnReceivedFirstVideoFrame:(NSString *)userId streamId:(NSString *)streamId {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        if ([self.delegate respondsToSelector:@selector(OnReceivedFirstVideoFrame:streamId:)]) {
+            [self.delegate OnReceivedFirstVideoFrame:userId streamId:streamId];
+        }
+    });
 }
 
 #pragma mark - 懒加载

@@ -1,8 +1,8 @@
 //
-//  CMRTCEngine.h
-//  CMRTCEngine
+//  LVRTCEngineDefines.h
+//  LVRTCEngineDefines
 //
-//  Copyright © 2019年 LiveMe. All rights reserved.
+//  Copyright © 2021年 LinkV. All rights reserved.
 //
 #import <Foundation/Foundation.h>
 #import <CoreMedia/CoreMedia.h>
@@ -233,7 +233,7 @@ typedef enum : NSUInteger {
     /**
         不旋转
      */
-    LVImageOrientationNone,
+    LVImageOrientationNone = 0,
     /**
         向左旋转
      */
@@ -258,11 +258,37 @@ typedef enum : NSUInteger {
         向右旋转并同时水平翻转
      */
     LVImageOrientationRightFlipHorizontal,
+    
+    LVImageOrientationRotateLeftHorizonal,
+    LVImageOrientationRotateRightHorizonal,
+    
     /**
         旋转 180 度
      */
-    LVImageOrientationRotate180
+    LVImageOrientationRotate180,
+    
+    /**
+        由程序内部控制旋转方向
+     */
+    LVImageOrientationAuto
 } LVImageOrientation;
+
+
+typedef enum : NSUInteger {
+    /**
+        设置 SDK 3A 模式，回声消除、降噪、自动增益
+     */
+    LVAudio3AModeDisable,
+    /**
+        使用硬件 3A
+     */
+    LVAudio3AModeHardware,
+    /**
+        使用软件 3A
+     */
+    LVAudio3AModeSoftware,
+} LVAudio3AMode;
+
 
 /**
  视频网络自适应j降级策略
@@ -289,6 +315,53 @@ typedef enum : NSUInteger {
     
 } LVVideoDegradationPreference;
 
+/**
+ 音频混音模式
+ */
+typedef enum : NSUInteger {
+    /**
+     * 伴奏音乐只用于发送，本地听不到伴奏音乐，远端可听到
+     */
+    LVAudioMixingMode_SEND_ONLY = (1 << 1),
+    /**
+     * 伴奏音乐只用于本地播放，远端听不到伴奏音乐
+     */
+    LVAudioMixingMode_PLAYOUT_ONLY = (1 << 2),
+    /**
+     * 伴奏音乐本地和远端都可听到
+     */
+    LVAudioMixingMode_SEND_AND_PLAYOUT = (LVAudioMixingMode_SEND_ONLY | LVAudioMixingMode_PLAYOUT_ONLY),
+    /**
+     * 替换microphone采集声音，本地和远端都只播放伴奏音乐
+     */
+    LVAudioMixingMode_REPLACE_MIC = (1 << 0 | LVAudioMixingMode_SEND_AND_PLAYOUT),
+    /**
+     * 伴奏替换microphone采集声音，同时伴奏声音只用于发送
+     */
+    LVAudioMixingMode_REPLACE_MIC_AND_SEND_ONLY = (1 << 0 | LVAudioMixingMode_SEND_ONLY)
+
+} LVAudioMixingMode;
+
+/**
+ 音视频录制支持模式
+ */
+typedef enum : NSUInteger {
+    /**
+        仅录制音频
+     */
+    LVRecorderType_AUDIO = 0,
+    /**
+        仅录制视频
+     */
+    LVRecorderType_VIDEO,
+    /**
+        音频和视频同时录制
+     */
+    LVRecorderType_AUDIO_AND_VIDEO,
+    
+} LVRecorderType;
+
+
 /// SDK 通用回到 block，code 表示当前操作的结果码
 typedef void (^LVServiceCompletion)(LVErrorCode code);
 
@@ -302,6 +375,9 @@ LV_EXPORT_CLASS
 
 /// 用户标识
 @property (nullable, nonatomic, copy)     NSString*   userId;
+
+/// 用来标识该用户在哪一个房间
+@property (nullable, nonatomic, copy)     NSString*   roomId;
 
 /// 拉流 url 集合
 @property (nullable, nonatomic, strong)   NSMutableArray<NSString*>* pullUrls;
@@ -388,7 +464,7 @@ LV_EXPORT_CLASS
 /// 视频总发送字节数
 @property (nonatomic, assign) long long videosentKbytes;
 
-/// 视频输入帧率（视频帧率）
+/// 视频输入、输出帧率（视频帧率）
 @property (nonatomic, assign) int       videoFps;
 
 /// 视频丢包总数
@@ -426,6 +502,11 @@ LV_EXPORT_CLASS
 
 /// 推流：编码视频高，拉流：输入视频帧高
 @property (nonatomic, assign) int       frameHeight;
+
+@property (nonatomic, assign) float      cpuusage;
+
+@property (nonatomic, assign) float     memoryusage;
+
 
 @end
 
@@ -534,7 +615,7 @@ LV_EXPORT_CLASS
 
 @end
 
-
+/// 基础美颜功能实现
 @interface LVBeautyManager : NSObject
 
 /// 设置滤镜美颜级别
@@ -551,20 +632,12 @@ LV_EXPORT_CLASS
 @end
 
 
+#define LV_LOGV(frmt, ...)    [LVLogger log:(kLVLoggingSeverityVerbose) function:__PRETTY_FUNCTION__ format:frmt,##__VA_ARGS__]
 
+#define LV_LOGE(frmt, ...)      [LVLogger log:(kLVLoggingSeverityError) function:__PRETTY_FUNCTION__ format:frmt,##__VA_ARGS__]
 
+#define LV_LOGW(frmt, ...)       [LVLogger log:(kLVLoggingSeverityWarning) function:__PRETTY_FUNCTION__ format:frmt,##__VA_ARGS__]
 
-
-
-
-#define LoggerVerbose(frmt, ...)    [LVLogger log:(kLVLoggingSeverityVerbose) function:__PRETTY_FUNCTION__ format:frmt,##__VA_ARGS__]
-
-#define LoggerError(frmt, ...)      [LVLogger log:(kLVLoggingSeverityError) function:__PRETTY_FUNCTION__ format:frmt,##__VA_ARGS__]
-
-#define LoggerWarn(frmt, ...)       [LVLogger log:(kLVLoggingSeverityWarning) function:__PRETTY_FUNCTION__ format:frmt,##__VA_ARGS__]
-
-#define LoggerInfo(frmt, ...)       [LVLogger log:(kLVLoggingSeverityInfo) function:__PRETTY_FUNCTION__ format:frmt,##__VA_ARGS__]
-
-#define LoggerNone(frmt, ...)    [LVLogger log:(kLVLoggingSeverityNone) function:__PRETTY_FUNCTION__ format:frmt,##__VA_ARGS__]
+#define LV_LOGI(frmt, ...)       [LVLogger log:(kLVLoggingSeverityInfo) function:__PRETTY_FUNCTION__ format:frmt,##__VA_ARGS__]
 
 NS_ASSUME_NONNULL_END

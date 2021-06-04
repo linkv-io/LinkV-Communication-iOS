@@ -110,6 +110,14 @@
     }
 }
 
+- (void)OnReceivedFirstAudioFrame:(NSString *)userId streamId:(NSString *)streamId {
+    NSLog(@"[Wing] %s", __func__);
+}
+
+- (void)OnReceivedFirstVideoFrame:(NSString *)userId streamId:(NSString *)streamId {
+    NSLog(@"[Wing] %s", __func__);
+}
+
 #pragma mark - LVIMReceiveMessageDelegate
 - (int)onRoomMessageReceive:(LVIMMessage *)msg {
     NSString *content = [[NSString alloc] initWithData:msg.mContent encoding:NSUTF8StringEncoding];
