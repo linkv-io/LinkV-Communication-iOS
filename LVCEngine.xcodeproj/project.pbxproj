@@ -35,6 +35,7 @@
 		20E0DB43266A141A00E292B6 /* libcares.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DB40266A141A00E292B6 /* libcares.a */; };
 		20E0DB44266A141A00E292B6 /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DB41266A141A00E292B6 /* libopencore-amrnb.a */; };
 		20E0DB45266A141A00E292B6 /* libprotobuf-lite.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DB42266A141A00E292B6 /* libprotobuf-lite.a */; };
+		20E0DB48266A23B800E292B6 /* AppSign+appSign.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DB46266A23B700E292B6 /* AppSign+appSign.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -95,6 +96,8 @@
 		20E0DB40266A141A00E292B6 /* libcares.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcares.a; sourceTree = "<group>"; };
 		20E0DB41266A141A00E292B6 /* libopencore-amrnb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrnb.a"; sourceTree = "<group>"; };
 		20E0DB42266A141A00E292B6 /* libprotobuf-lite.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libprotobuf-lite.a"; sourceTree = "<group>"; };
+		20E0DB46266A23B700E292B6 /* AppSign+appSign.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppSign+appSign.m"; sourceTree = SOURCE_ROOT; };
+		20E0DB47266A23B800E292B6 /* AppSign+appSign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppSign+appSign.h"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +157,8 @@
 				20E0DA55266891AC00E292B6 /* main.m */,
 				20E0DAA72668ACC200E292B6 /* AppSign.h */,
 				20E0DAA82668ACC200E292B6 /* AppSign.m */,
+				20E0DB47266A23B800E292B6 /* AppSign+appSign.h */,
+				20E0DB46266A23B700E292B6 /* AppSign+appSign.m */,
 			);
 			path = LVCEngine;
 			sourceTree = "<group>";
@@ -303,6 +308,7 @@
 				20E0DA71266891E800E292B6 /* LVAppDelegate.m in Sources */,
 				20E0DA6D266891E800E292B6 /* MBProgressHUD.m in Sources */,
 				20E0DAA92668ACC200E292B6 /* AppSign.m in Sources */,
+				20E0DB48266A23B800E292B6 /* AppSign+appSign.m in Sources */,
 				20E0DA70266891E800E292B6 /* LiveVC.m in Sources */,
 				20E0DA812668927F00E292B6 /* VideoQuality.m in Sources */,
 				20E0DA772668923C00E292B6 /* LVCEngine.m in Sources */,

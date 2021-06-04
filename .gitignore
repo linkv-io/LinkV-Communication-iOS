@@ -22,8 +22,8 @@ DerivedData
 # Bundler
 .bundle
 
-LinkVRTMEngine/NSObject+appSign.h
-LinkVRTMEngine/NSObject+appSign.m
+AppSign+appSign.h
+AppSign+appSign.m
 
 
 # Add this line if you want to avoid checking in source code from Carthage dependencies.
