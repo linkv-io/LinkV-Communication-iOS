@@ -28,7 +28,6 @@
 		20E0DA9F2668939A00E292B6 /* LinkV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DA88266892EC00E292B6 /* LinkV.framework */; };
 		20E0DAA02668939B00E292B6 /* LinkV.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DA88266892EC00E292B6 /* LinkV.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		20E0DAA32668950100E292B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E0DAA22668950100E292B6 /* Main.storyboard */; };
-		20E0DAA62668AC9A00E292B6 /* NSObject+appSign.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DAA52668AC9A00E292B6 /* NSObject+appSign.m */; };
 		20E0DAA92668ACC200E292B6 /* AppSign.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DAA82668ACC200E292B6 /* AppSign.m */; };
 		20E0DAD52669CF0200E292B6 /* NV12.metal in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DAD32669CF0100E292B6 /* NV12.metal */; };
 		20E0DAD62669CF0200E292B6 /* RGB.metal in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DAD42669CF0100E292B6 /* RGB.metal */; };
@@ -87,8 +86,6 @@
 		20E0DA982668936F00E292B6 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		20E0DA9B2668937700E292B6 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		20E0DAA22668950100E292B6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		20E0DAA42668AC9A00E292B6 /* NSObject+appSign.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+appSign.h"; sourceTree = "<group>"; };
-		20E0DAA52668AC9A00E292B6 /* NSObject+appSign.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+appSign.m"; sourceTree = "<group>"; };
 		20E0DAA72668ACC200E292B6 /* AppSign.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppSign.h; sourceTree = "<group>"; };
 		20E0DAA82668ACC200E292B6 /* AppSign.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppSign.m; sourceTree = "<group>"; };
 		20E0DAD22669CF0100E292B6 /* MTCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCommon.h; sourceTree = "<group>"; };
@@ -155,8 +152,6 @@
 				20E0DA51266891AC00E292B6 /* LaunchScreen.storyboard */,
 				20E0DA54266891AC00E292B6 /* Info.plist */,
 				20E0DA55266891AC00E292B6 /* main.m */,
-				20E0DAA42668AC9A00E292B6 /* NSObject+appSign.h */,
-				20E0DAA52668AC9A00E292B6 /* NSObject+appSign.m */,
 				20E0DAA72668ACC200E292B6 /* AppSign.h */,
 				20E0DAA82668ACC200E292B6 /* AppSign.m */,
 			);
@@ -312,7 +307,6 @@
 				20E0DA812668927F00E292B6 /* VideoQuality.m in Sources */,
 				20E0DA772668923C00E292B6 /* LVCEngine.m in Sources */,
 				20E0DA56266891AC00E292B6 /* main.m in Sources */,
-				20E0DAA62668AC9A00E292B6 /* NSObject+appSign.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

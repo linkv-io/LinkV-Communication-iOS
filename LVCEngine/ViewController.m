@@ -23,6 +23,8 @@
 @property (nonatomic, assign) BOOL isIMAuthed;
 @property (nonatomic, assign) BOOL isRTCAuthed;
 
+@property (nonatomic, assign) BOOL isQueryingIMToken;
+
 @end
 
 @implementation ViewController
@@ -92,7 +94,14 @@
 -(void)onQueryIMToken {
     NSLog(@"[Wing] onQueryIMToken thread = %@", [NSThread currentThread]);
     
-    [[LVIMSDK sharedInstance] setIMToken:self.uid token:@"32923932hjjfo22o2222903"];
+    // 正式接入应该是：你的客户端请求服务端获取IM Token， 你的服务端请求IM的服务端获取IM Token
+    if (self.isQueryingIMToken) return;
+    self.isQueryingIMToken = YES;
+    __weak typeof(self) weakSelf = self;
+    [AppSign queryIMToken:self.uid complete:^(NSString * _Nonnull imToken) {
+        [[LVIMSDK sharedInstance] setIMToken:weakSelf.uid token:imToken];
+        weakSelf.isQueryingIMToken = NO;
+    }];
 }
 
 /**
