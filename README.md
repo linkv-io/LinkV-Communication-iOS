@@ -64,7 +64,11 @@
 
 ```objective-c
 self.engine = [LVRTMEngine createEngineWithAppId:[AppSign your_app_id] appKey:[AppSign your_app_key] isTestEnv:NO completion:^(NSInteger code) {
-        [weakSelf authComplete:code];
+        if (code == 0) {
+          // 认证成功
+        } else {
+          // 认证失败
+        }
     }];
 ```
 
