@@ -8,7 +8,7 @@
 
 #import "LiveVC.h"
 #import "LinkVRTCEngine.h"
-#import "LVRTMEngine.h"
+#import "LVCEngine.h"
 #import "MBProgressHUD+DS.h"
 
 #ifdef DEBUG
@@ -19,7 +19,7 @@
 
 @interface LiveVC ()<RoomCallbackProtocl>
 
-@property (nonatomic, strong) LVRTMEngine *engine;
+@property (nonatomic, strong) LVCEngine *engine;
 @property (weak, nonatomic) IBOutlet UIView *meView;
 @property (weak, nonatomic) IBOutlet UIView *otherView;
 @property (weak, nonatomic) IBOutlet UILabel *meLabel;
@@ -49,7 +49,7 @@
 }
 
 - (void)initSDK {
-    self.engine = [LVRTMEngine shared];
+    self.engine = [LVCEngine shared];
 }
 
 #pragma mark - RTCCallbackDelegate

@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "LiveVC.h"
-#import "LVRTMEngine.h"
+#import "LVCEngine.h"
 #import "MBProgressHUD+DS.h"
 #import <AdSupport/ASIdentifierManager.h>
 #import "AppSign.h"
@@ -17,7 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *roomField;
 
-@property (nonatomic, strong) LVRTMEngine *engine;
+@property (nonatomic, strong) LVCEngine *engine;
 @property (nonatomic, copy) NSString *uid;
 
 @property (nonatomic, assign) BOOL isIMAuthed;
@@ -41,7 +41,7 @@
 
 - (void)initSDK {
     __weak typeof(self) weakSelf = self;
-    self.engine = [LVRTMEngine createEngineWithAppId:[AppSign your_app_id] appKey:[AppSign your_app_key] isTestEnv:NO completion:^(NSInteger code) {
+    self.engine = [LVCEngine createEngineWithAppId:[AppSign your_app_id] appKey:[AppSign your_app_key] isTestEnv:NO completion:^(NSInteger code) {
         [weakSelf authComplete:code];
     }];
     

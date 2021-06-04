@@ -1,5 +1,5 @@
 //
-//  LVRTMEngine.h
+//  LVCEngine.h
 //  LinkV_Zego_iOS
 //
 //  Created by Wing on 2020/8/5.
@@ -25,7 +25,7 @@ static int ERROR_BUILD_MSG = 1001; // 构建消息失败
 
 @end
 
-@interface LVRTMEngine : NSObject
+@interface LVCEngine : NSObject
 
 + (instancetype)shared;
 

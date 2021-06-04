@@ -1,13 +1,13 @@
 //
-//  LVRTMEngine.m
+//  LVCEngine.m
 //  LinkV_Zego_iOS
 //
 //  Created by Wing on 2020/8/5.
 //
 
-#import "LVRTMEngine.h"
+#import "LVCEngine.h"
 
-@interface LVRTMEngine ()<LVIMReceiveMessageDelegate>
+@interface LVCEngine ()<LVIMReceiveMessageDelegate>
 
 @property (nonatomic, strong) LinkVRTCEngine *engine;
 @property (nonatomic, strong) LVIMSDK *imSDK;
@@ -17,13 +17,13 @@
 
 @end
 
-@implementation LVRTMEngine
+@implementation LVCEngine
 
 //+ (instancetype)sharedForLinkv;
 + (instancetype)shared {
     //仅共享IM
     static dispatch_once_t onceToken;
-    static LVRTMEngine *_engine;
+    static LVCEngine *_engine;
     dispatch_once(&onceToken, ^{
         _engine = [self new];
     });
@@ -46,7 +46,7 @@
                    isTestEnv:(BOOL)isTestEnv
                   completion:(LVCodeCompletion)completion {
     
-    LVRTMEngine *rtm = [self shared];
+    LVCEngine *rtm = [self shared];
     rtm.engine = [LinkVRTCEngine createEngine:type appId:rtcAppId appKey:rtcAppKey isTestEnv:isTestEnv completion:completion];
     
     if (rtm.imSDK) {
