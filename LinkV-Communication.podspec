@@ -15,8 +15,8 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/linkv-io/LinkV-Communication-iOS.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '9.0'
-  s.source_files = 'LVCEngine/LVCEngine/**/*'
-  s.public_header_files = 'LVCEngine/LVCEngine/**/*.h'
+  s.source_files = 'LVCEngine/LVCEngine/LinkV_RTC/**/*'
+  s.public_header_files = 'LVCEngine/LVCEngine/LinkV_RTC/**/*.h'
   # 需要引入的自己打包的.framework
   s.vendored_frameworks = 'LVCEngine/framework/LinkV.framework', 'LVCEngine/framework/LVIMLib.framework'
   # 需要引入的自己打包的.a静态库文件
