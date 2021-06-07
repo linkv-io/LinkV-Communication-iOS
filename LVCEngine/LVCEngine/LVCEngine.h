@@ -32,11 +32,9 @@ static int ERROR_BUILD_MSG = 1001; // 构建消息失败
 /// 创建引擎
 /// @param appId appId
 /// @param appKey appkey
-/// @param isTestEnv istest
 /// @param completion 回调
 + (instancetype)createEngineWithAppId:(NSString *)appId
                    appKey:(NSString *)appKey
-                   isTestEnv:(BOOL)isTestEnv
                   completion:(LVCodeCompletion)completion;
 
 

@@ -33,9 +33,8 @@
 
 + (instancetype)createEngineWithAppId:(NSString *)appId
                    appKey:(NSString *)appKey
-                   isTestEnv:(BOOL)isTestEnv
                            completion:(LVCodeCompletion)completion {
-    return [self createEngine:SDK_TYPE_LVRTC rtcAppId:appId rtcAppKey:appKey imAppId:appId imAppKey:appKey isTestEnv:isTestEnv completion:completion];
+    return [self createEngine:SDK_TYPE_LVRTC rtcAppId:appId rtcAppKey:appKey imAppId:appId imAppKey:appKey isTestEnv:NO completion:completion];
 }
 
 + (instancetype)createEngine:(SDKType)type

@@ -1,5 +1,7 @@
 # LinkV-Communication
 
+- 商务合作与技术交流请加QQ群：**1160896626**，邮箱：**develop@linkv.sg**
+
 此SDK主要是对[LinkV音视频SDK](https://doc-zh.linkv.sg/ios/rtc/overview)和[IM SDK](https://doc-zh.linkv.sg/ios/im/overview)的一层封装，使其接口更加简单易用。所有封装的代码都在`LVCEngine`文件夹下，且全部开源，您可以根据您的需求任意修改里面的代码实现。当然您也可以在项目中直接引用[LinkV音视频SDK](https://doc-zh.linkv.sg/ios/rtc/overview)和[IM SDK](https://doc-zh.linkv.sg/ios/im/overview)相关的类来实现更加复杂的功能。
 
 如果你想要实现类似如下的一对一视频聊天，则使用此SDK能让你事半功倍。一对一视频聊天Demo源码：[StrangerChat](https://github.com/linkv-io/StrangerChat)
@@ -8,13 +10,24 @@
 
 # 一、如何集成
 
-## 环境准备
+## 1.1 环境准备
 
 * iOS 9.0 或更高版本。
 * Xcode 10.0 或以上版本。
 
-## 下载SDK
+## 1.2 集成SDK
+### 1.2.1 Cocoapods集成
 
+> 在执行以下步骤之前，请确保已安装 `CocoaPods`。 请参阅 [*CocoaPods 官网*](https://cocoapods.org/)
+
+在工程 `Podfile` 文件中添加`LinkV-Communication`依赖，然后执行 `pod install` 即可添加此SDK到工程中（如果搜索不到可以在终端执行`pod repo update` 更新索引库）
+
+```
+pod 'LinkV-Communication'
+```
+
+###  1.2.2 手动集成
+#### (1)下载SDK
 把整个项目从[github](https://github.com/linkv-io/LinkV-RTM-iOS/tree/main/LinkVRTMEngine)下载下来之后，把`framework`和`LVCEngine`拖入到你的项目中
 
 ![image-20210603153025663](./LVCEngine/snapshot/sdk_folder.png)
@@ -23,7 +36,15 @@
 
 ![image-20210603154715691](./LVCEngine/snapshot/embed&sign.png)
 
-## 添加权限和关闭ATS
+#### (2)关闭bitcode
+
+> 由于 **SDK** 目前没有支持 `bitcode`，所以需要关闭 bitcode 选项。
+
+`TARGETS` → `Build Settings` 搜索 `bitcode` ，将`Enable Bitcode`设置为 **NO**
+
+![bitcode](./LVCEngine/snapshot/bitcode.jpeg)
+
+## 1.3 添加权限和关闭ATS
 
 > SDK 依赖了摄像头，麦克风，等相关权限，需要 APP 主客户端info.plist中添加相关权限的描述。
 >
@@ -46,14 +67,6 @@
 </dict>
 ```
 
-## 关闭bitcode
-
-> 由于 **SDK** 目前没有支持 `bitcode`，所以需要关闭 bitcode 选项。
-
-`TARGETS` → `Build Settings` 搜索 `bitcode` ，将`Enable Bitcode`设置为 **NO**
-
-![bitcode](./LVCEngine/snapshot/bitcode.jpeg)
-
 # 二、 如何使用LVCEngine
 
 ## 前提条件
@@ -66,7 +79,7 @@
 ## 2.1 初始化SDK
 
 ```objective-c
-self.engine = [LVCEngine createEngineWithAppId:[AppSign your_app_id] appKey:[AppSign your_app_key] isTestEnv:NO completion:^(NSInteger code) {
+self.engine = [LVCEngine createEngineWithAppId:[AppSign your_app_id] appKey:[AppSign your_app_key] completion:^(NSInteger code) {
         if (code == 0) {
           // 认证成功
         } else {
@@ -183,8 +196,6 @@ self.engine = [LVCEngine createEngineWithAppId:[AppSign your_app_id] appKey:[App
 }
 ```
 
-
-
 ## 3.2 添加预览视图并往服务器推流
 
 在**登录房间成功的回调**里`添加预览视图`和`推流`
@@ -217,7 +228,29 @@ self.engine = [LVCEngine createEngineWithAppId:[AppSign your_app_id] appKey:[App
 }
 ```
 
-## 3.5 退出房间
+## 3.5 房间消息
+
+发送房间消息，房间中的所有人都会收到消息回调
+
+```objective-c
+[self.engine sendRoomMessage:self.roomId content:@"Your_Content" complete:^(int ecode, int rcode, int64_t lvsgid, int64_t smsgid, int64_t stime, LVIMMessage *msg) {
+        if (ecode == 0) {
+          // 发送消息成功
+        } else {
+          // 发送消息失败
+        }
+    }];
+```
+
+收到房间消息回调
+
+```objective-c
+- (int)onRoomMessageReceive:(LVIMMessage *)msg {
+    return 0;
+}
+```
+
+## 3.6 退出房间
 
 ```objective-c
 [self.engine logoutRoom];

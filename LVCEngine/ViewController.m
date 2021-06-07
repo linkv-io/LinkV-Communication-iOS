@@ -43,7 +43,7 @@
 
 - (void)initSDK {
     __weak typeof(self) weakSelf = self;
-    self.engine = [LVCEngine createEngineWithAppId:[AppSign your_app_id] appKey:[AppSign your_app_key] isTestEnv:NO completion:^(NSInteger code) {
+    self.engine = [LVCEngine createEngineWithAppId:[AppSign your_app_id] appKey:[AppSign your_app_key] completion:^(NSInteger code) {
         [weakSelf authComplete:code];
     }];
     
@@ -99,7 +99,7 @@
     self.isQueryingIMToken = YES;
     __weak typeof(self) weakSelf = self;
     [AppSign queryIMToken:self.uid complete:^(NSString * _Nonnull imToken) {
-        [[LVIMSDK sharedInstance] setIMToken:weakSelf.uid token:imToken];
+        [weakSelf.engine setIMToken:weakSelf.uid token:imToken];
         weakSelf.isQueryingIMToken = NO;
     }];
 }
