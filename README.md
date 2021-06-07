@@ -28,7 +28,7 @@ pod 'LinkV-Communication'
 
 ###  1.2.2 手动集成
 #### (1)下载SDK
-把整个项目从[github](https://github.com/linkv-io/LinkV-RTM-iOS/tree/main/LinkVRTMEngine)下载下来之后，把`framework`和`LVCEngine`拖入到你的项目中
+把整个项目从[github](https://github.com/linkv-io/LinkV-Communication-iOS)下载下来之后，把`framework`和`LVCEngine`拖入到你的项目中
 
 ![image-20210603153025663](./LVCEngine/snapshot/sdk_folder.png)
 
