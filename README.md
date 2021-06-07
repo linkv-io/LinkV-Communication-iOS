@@ -292,7 +292,7 @@ self.engine = [LVCEngine createEngineWithAppId:[AppSign your_app_id] appKey:[App
 - (void)OnReceivedFirstAudioFrame:(NSString *_Nullable)userId streamId:(NSString *_Nullable)streamId {}
 ```
 
-## 3.6 退出房间
+## 3.8 退出房间
 
 ```objective-c
 [self.engine logoutRoom];
