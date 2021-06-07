@@ -34,10 +34,9 @@
 ```xml
 <!-- 麦克风和摄像头权限申请   -->
 <key>NSCameraUsageDescription</key>
-<string>LinkliveSDK 需要使用摄像头权限，否则无法发布视频直播<   string>
+<string>LinkliveSDK 需要使用摄像头权限，否则无法发布视频直播</string>
 <key>NSMicrophoneUsageDescription</key>
-<string>LinkliveSDK 需要使用麦克风权限，否则无法发布音频直播<   string>
-<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+<string>LinkliveSDK 需要使用麦克风权限，否则无法发布音频直播</string>
   
 <!-- 关闭ATS -->
 <key>NSAppTransportSecurity</key>

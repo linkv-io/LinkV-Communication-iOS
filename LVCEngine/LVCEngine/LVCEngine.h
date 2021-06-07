@@ -130,6 +130,13 @@ static int ERROR_BUILD_MSG = 1001; // 构建消息失败
 // 登录IM
 - (int)loginIM:(NSString *)uid delegate:(id<LVIMModuleEventDelegate>)delegate;
 
+/**
+ @brief 设置LVIM的认证码
+ @param uid 用户ID
+ @param token 认证码(lvim)
+ **/
+-(void)setIMToken:(NSString*)uid token:(NSString*)token;
+
 // 设置IM鉴权监听
 - (void)setIMAuthEventDelegate:(id<LVIMModuleEventDelegate>)delegate;
 

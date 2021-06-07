@@ -183,6 +183,10 @@
     return [self.imSDK login:uid];
 }
 
+-(void)setIMToken:(NSString*)uid token:(NSString*)token {
+    [self.imSDK setIMToken:uid token:token];
+}
+
 // 设置IM鉴权监听
 - (void)setIMAuthEventDelegate:(id<LVIMModuleEventDelegate>)delegate {
     [self.imSDK setModuleEventDelegate:delegate];
