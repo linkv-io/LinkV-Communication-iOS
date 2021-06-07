@@ -19,7 +19,7 @@
 
 ![image-20210603153025663](./LVCEngine/snapshot/sdk_folder.png)
 
-设置LinkV.framework为`Embed & Sign`
+在`Frameworks,Libraries, and Embedded Content`中设置LinkV.framework为`Embed & Sign`，并且添加需要的系统库：`libc++.tbd`、`libresolv.9.tbd`、`libsqlite3.tbd`、`libz.tbd`
 
 ![image-20210603154715691](./LVCEngine/snapshot/embed&sign.png)
 
@@ -29,7 +29,7 @@
 >
 > 由于目前 SDK 还需要使用 http 域名，所以需要关闭 ATS。
 
-选择项目 → `Info.plist` → 右键点击 Info.plist →  Open As →  `Source Code` 复制以下到 Info.plist 里面。
+选择项目 → `Info.plist` → 右键点击 Info.plist →  Open As →  `Source Code` 复制以下内容到 Info.plist 里面。
 
 ```xml
 <!-- 麦克风和摄像头权限申请   -->
