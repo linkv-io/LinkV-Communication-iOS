@@ -1,11 +1,12 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LinkV-Communication'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   s.summary          = 'RTC + IM 优化接口'
 
   s.description      = <<-DESC
  RTC + IM you can send im message
+ update api
                        DESC
 
   s.homepage         = 'https://github.com/linkv-io/LinkV-Communication-iOS'
