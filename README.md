@@ -194,6 +194,12 @@ self.engine = [LVCEngine createEngineWithAppId:[AppSign your_app_id] appKey:[App
 - (int)onRoomMessageReceive:(LVIMMessage *)msg {
     return 0;
 }
+
+// 收到首帧音频流
+- (void)OnReceivedFirstAudioFrame:(NSString *)userId streamId:(NSString *)streamId {}
+
+// 收到首帧视频流
+- (void)OnReceivedFirstVideoFrame:(NSString *)userId streamId:(NSString *)streamId
 ```
 
 ## 3.2 添加预览视图并往服务器推流
@@ -248,6 +254,42 @@ self.engine = [LVCEngine createEngineWithAppId:[AppSign your_app_id] appKey:[App
 - (int)onRoomMessageReceive:(LVIMMessage *)msg {
     return 0;
 }
+```
+
+## 3.6 录制视频
+
+开始录制视频
+
+```objective-c
+/// @param userId 用户 ID
+/// @param path 文件路径
+/// @param type 音视频录制类型
+/// @return 0 : 录制成功， 其他 : 录制失败
+- (int)startRecorder:(NSString *_Nonnull)userId path:(NSString *_Nonnull)path type:(LVRecorderType)type;
+```
+
+停止视频录制
+
+```objective-c
+/// 停止录制
+/// @param userId 音视频用户 ID
+/// @return 0 : 停止录制成功，其他 : 停止录制失败
+- (int)stopRecorder:(NSString *_Nonnull)userId;
+```
+
+## 3.7 音视频首帧回调
+
+```objective-c
+/// 收到【视频】首帧回调通知事件
+/// @param userId 视频发送者用户 ID
+/// @param streamId 流 ID，默认为空字符串，如果使用自定义视频流时为自定义视频流对应的流名称
+- (void)OnReceivedFirstVideoFrame:(NSString *_Nullable)userId streamId:(NSString *_Nullable)streamId {}
+
+
+/// 收到【音频】首帧回调通知事件
+/// @param userId 视频发送者用户 ID
+/// @param streamId 流 ID，默认为空字符串，如果使用自定义视频流时为自定义视频流对应的流名称
+- (void)OnReceivedFirstAudioFrame:(NSString *_Nullable)userId streamId:(NSString *_Nullable)streamId {}
 ```
 
 ## 3.6 退出房间

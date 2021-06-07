@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		207CCD34266E45370084541B /* NV12.metal in Sources */ = {isa = PBXBuildFile; fileRef = 207CCD29266E45370084541B /* NV12.metal */; };
+		207CCD35266E45370084541B /* RGB.metal in Sources */ = {isa = PBXBuildFile; fileRef = 207CCD2A266E45370084541B /* RGB.metal */; };
+		207CCD36266E45370084541B /* VideoQuality.m in Sources */ = {isa = PBXBuildFile; fileRef = 207CCD2C266E45370084541B /* VideoQuality.m */; };
+		207CCD37266E45370084541B /* LinkVRTCEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 207CCD2D266E45370084541B /* LinkVRTCEngine.m */; };
+		207CCD38266E45370084541B /* LVRTCLive.m in Sources */ = {isa = PBXBuildFile; fileRef = 207CCD2E266E45370084541B /* LVRTCLive.m */; };
+		207CCD39266E45370084541B /* LVCEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 207CCD33266E45370084541B /* LVCEngine.m */; };
 		20E0DA50266891AC00E292B6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20E0DA4F266891AC00E292B6 /* Assets.xcassets */; };
 		20E0DA53266891AC00E292B6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E0DA51266891AC00E292B6 /* LaunchScreen.storyboard */; };
 		20E0DA56266891AC00E292B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DA55266891AC00E292B6 /* main.m */; };
@@ -17,10 +23,6 @@
 		20E0DA6F266891E800E292B6 /* MBProgressHUD+DS.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DA65266891E700E292B6 /* MBProgressHUD+DS.m */; };
 		20E0DA70266891E800E292B6 /* LiveVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DA68266891E700E292B6 /* LiveVC.m */; };
 		20E0DA71266891E800E292B6 /* LVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DA69266891E700E292B6 /* LVAppDelegate.m */; };
-		20E0DA772668923C00E292B6 /* LVCEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DA762668923C00E292B6 /* LVCEngine.m */; };
-		20E0DA802668927F00E292B6 /* LVRTCLive.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DA7D2668927F00E292B6 /* LVRTCLive.m */; };
-		20E0DA812668927F00E292B6 /* VideoQuality.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DA7E2668927F00E292B6 /* VideoQuality.m */; };
-		20E0DA822668927F00E292B6 /* LinkVRTCEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DA7F2668927F00E292B6 /* LinkVRTCEngine.m */; };
 		20E0DA932668935900E292B6 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DA922668935900E292B6 /* libsqlite3.tbd */; };
 		20E0DA962668936400E292B6 /* libresolv.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DA952668936400E292B6 /* libresolv.9.tbd */; };
 		20E0DA992668936F00E292B6 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DA982668936F00E292B6 /* libz.tbd */; };
@@ -29,8 +31,6 @@
 		20E0DAA02668939B00E292B6 /* LinkV.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DA88266892EC00E292B6 /* LinkV.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		20E0DAA32668950100E292B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20E0DAA22668950100E292B6 /* Main.storyboard */; };
 		20E0DAA92668ACC200E292B6 /* AppSign.m in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DAA82668ACC200E292B6 /* AppSign.m */; };
-		20E0DAD52669CF0200E292B6 /* NV12.metal in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DAD32669CF0100E292B6 /* NV12.metal */; };
-		20E0DAD62669CF0200E292B6 /* RGB.metal in Sources */ = {isa = PBXBuildFile; fileRef = 20E0DAD42669CF0100E292B6 /* RGB.metal */; };
 		20E0DB3F266A13E300E292B6 /* LVIMLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DB3E266A13E300E292B6 /* LVIMLib.framework */; };
 		20E0DB43266A141A00E292B6 /* libcares.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DB40266A141A00E292B6 /* libcares.a */; };
 		20E0DB44266A141A00E292B6 /* libopencore-amrnb.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20E0DB41266A141A00E292B6 /* libopencore-amrnb.a */; };
@@ -53,6 +53,17 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		207CCD28266E45370084541B /* MTCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCommon.h; sourceTree = "<group>"; };
+		207CCD29266E45370084541B /* NV12.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = NV12.metal; sourceTree = "<group>"; };
+		207CCD2A266E45370084541B /* RGB.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = RGB.metal; sourceTree = "<group>"; };
+		207CCD2C266E45370084541B /* VideoQuality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoQuality.m; sourceTree = "<group>"; };
+		207CCD2D266E45370084541B /* LinkVRTCEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkVRTCEngine.m; sourceTree = "<group>"; };
+		207CCD2E266E45370084541B /* LVRTCLive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVRTCLive.m; sourceTree = "<group>"; };
+		207CCD2F266E45370084541B /* LVCEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVCEngine.h; sourceTree = "<group>"; };
+		207CCD30266E45370084541B /* LVRTCLive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVRTCLive.h; sourceTree = "<group>"; };
+		207CCD31266E45370084541B /* LinkVRTCEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkVRTCEngine.h; sourceTree = "<group>"; };
+		207CCD32266E45370084541B /* VideoQuality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoQuality.h; sourceTree = "<group>"; };
+		207CCD33266E45370084541B /* LVCEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVCEngine.m; sourceTree = "<group>"; };
 		20E0DA40266891AA00E292B6 /* LVCEngine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LVCEngine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20E0DA4F266891AC00E292B6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20E0DA52266891AC00E292B6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -70,14 +81,6 @@
 		20E0DA68266891E700E292B6 /* LiveVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LiveVC.m; sourceTree = "<group>"; };
 		20E0DA69266891E700E292B6 /* LVAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVAppDelegate.m; sourceTree = "<group>"; };
 		20E0DA6A266891E800E292B6 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		20E0DA752668923C00E292B6 /* LVCEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVCEngine.h; sourceTree = "<group>"; };
-		20E0DA762668923C00E292B6 /* LVCEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVCEngine.m; sourceTree = "<group>"; };
-		20E0DA7A2668927F00E292B6 /* LinkVRTCEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkVRTCEngine.h; sourceTree = "<group>"; };
-		20E0DA7B2668927F00E292B6 /* LVRTCLive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVRTCLive.h; sourceTree = "<group>"; };
-		20E0DA7C2668927F00E292B6 /* VideoQuality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoQuality.h; sourceTree = "<group>"; };
-		20E0DA7D2668927F00E292B6 /* LVRTCLive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVRTCLive.m; sourceTree = "<group>"; };
-		20E0DA7E2668927F00E292B6 /* VideoQuality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoQuality.m; sourceTree = "<group>"; };
-		20E0DA7F2668927F00E292B6 /* LinkVRTCEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkVRTCEngine.m; sourceTree = "<group>"; };
 		20E0DA88266892EC00E292B6 /* LinkV.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LinkV.framework; sourceTree = "<group>"; };
 		20E0DA8B2668934400E292B6 /* libopencore-amrnb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libopencore-amrnb.a"; path = "LinkVRTMEngine/framework/LVIMLib.framework/libopencore-amrnb.a"; sourceTree = "<group>"; };
 		20E0DA8C2668934400E292B6 /* libcares.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcares.a; path = LinkVRTMEngine/framework/LVIMLib.framework/libcares.a; sourceTree = "<group>"; };
@@ -89,9 +92,6 @@
 		20E0DAA22668950100E292B6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		20E0DAA72668ACC200E292B6 /* AppSign.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppSign.h; sourceTree = "<group>"; };
 		20E0DAA82668ACC200E292B6 /* AppSign.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppSign.m; sourceTree = "<group>"; };
-		20E0DAD22669CF0100E292B6 /* MTCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCommon.h; sourceTree = "<group>"; };
-		20E0DAD32669CF0100E292B6 /* NV12.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = NV12.metal; sourceTree = "<group>"; };
-		20E0DAD42669CF0100E292B6 /* RGB.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = RGB.metal; sourceTree = "<group>"; };
 		20E0DB3E266A13E300E292B6 /* LVIMLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LVIMLib.framework; sourceTree = "<group>"; };
 		20E0DB40266A141A00E292B6 /* libcares.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libcares.a; sourceTree = "<group>"; };
 		20E0DB41266A141A00E292B6 /* libopencore-amrnb.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "libopencore-amrnb.a"; sourceTree = "<group>"; };
@@ -120,6 +120,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		207CCD26266E45370084541B /* LVCEngine */ = {
+			isa = PBXGroup;
+			children = (
+				207CCD27266E45370084541B /* Metal */,
+				207CCD2B266E45370084541B /* LinkV_RTC */,
+			);
+			path = LVCEngine;
+			sourceTree = "<group>";
+		};
+		207CCD27266E45370084541B /* Metal */ = {
+			isa = PBXGroup;
+			children = (
+				207CCD28266E45370084541B /* MTCommon.h */,
+				207CCD29266E45370084541B /* NV12.metal */,
+				207CCD2A266E45370084541B /* RGB.metal */,
+			);
+			path = Metal;
+			sourceTree = "<group>";
+		};
+		207CCD2B266E45370084541B /* LinkV_RTC */ = {
+			isa = PBXGroup;
+			children = (
+				207CCD2F266E45370084541B /* LVCEngine.h */,
+				207CCD33266E45370084541B /* LVCEngine.m */,
+				207CCD31266E45370084541B /* LinkVRTCEngine.h */,
+				207CCD2D266E45370084541B /* LinkVRTCEngine.m */,
+				207CCD30266E45370084541B /* LVRTCLive.h */,
+				207CCD2E266E45370084541B /* LVRTCLive.m */,
+				207CCD32266E45370084541B /* VideoQuality.h */,
+				207CCD2C266E45370084541B /* VideoQuality.m */,
+			);
+			path = LinkV_RTC;
+			sourceTree = "<group>";
+		};
 		20E0DA37266891AA00E292B6 = {
 			isa = PBXGroup;
 			children = (
@@ -140,8 +174,8 @@
 		20E0DA42266891AA00E292B6 /* LVCEngine */ = {
 			isa = PBXGroup;
 			children = (
+				207CCD26266E45370084541B /* LVCEngine */,
 				20E0DA84266892C600E292B6 /* framework */,
-				20E0DA742668922C00E292B6 /* LVCEngine */,
 				20E0DA67266891E700E292B6 /* LiveVC.h */,
 				20E0DA68266891E700E292B6 /* LiveVC.m */,
 				20E0DA5F266891E700E292B6 /* LiveVC.xib */,
@@ -173,32 +207,6 @@
 				20E0DA65266891E700E292B6 /* MBProgressHUD+DS.m */,
 			);
 			path = MBProgressHUD;
-			sourceTree = "<group>";
-		};
-		20E0DA742668922C00E292B6 /* LVCEngine */ = {
-			isa = PBXGroup;
-			children = (
-				20E0DAD22669CF0100E292B6 /* MTCommon.h */,
-				20E0DAD32669CF0100E292B6 /* NV12.metal */,
-				20E0DAD42669CF0100E292B6 /* RGB.metal */,
-				20E0DA792668926C00E292B6 /* LinkV_RTC */,
-				20E0DA752668923C00E292B6 /* LVCEngine.h */,
-				20E0DA762668923C00E292B6 /* LVCEngine.m */,
-			);
-			path = LVCEngine;
-			sourceTree = "<group>";
-		};
-		20E0DA792668926C00E292B6 /* LinkV_RTC */ = {
-			isa = PBXGroup;
-			children = (
-				20E0DA7A2668927F00E292B6 /* LinkVRTCEngine.h */,
-				20E0DA7F2668927F00E292B6 /* LinkVRTCEngine.m */,
-				20E0DA7B2668927F00E292B6 /* LVRTCLive.h */,
-				20E0DA7D2668927F00E292B6 /* LVRTCLive.m */,
-				20E0DA7C2668927F00E292B6 /* VideoQuality.h */,
-				20E0DA7E2668927F00E292B6 /* VideoQuality.m */,
-			);
-			path = LinkV_RTC;
 			sourceTree = "<group>";
 		};
 		20E0DA84266892C600E292B6 /* framework */ = {
@@ -300,18 +308,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				20E0DA6F266891E800E292B6 /* MBProgressHUD+DS.m in Sources */,
-				20E0DA802668927F00E292B6 /* LVRTCLive.m in Sources */,
-				20E0DA822668927F00E292B6 /* LinkVRTCEngine.m in Sources */,
-				20E0DAD62669CF0200E292B6 /* RGB.metal in Sources */,
+				207CCD39266E45370084541B /* LVCEngine.m in Sources */,
+				207CCD38266E45370084541B /* LVRTCLive.m in Sources */,
 				20E0DA6B266891E800E292B6 /* ViewController.m in Sources */,
-				20E0DAD52669CF0200E292B6 /* NV12.metal in Sources */,
 				20E0DA71266891E800E292B6 /* LVAppDelegate.m in Sources */,
+				207CCD36266E45370084541B /* VideoQuality.m in Sources */,
+				207CCD35266E45370084541B /* RGB.metal in Sources */,
 				20E0DA6D266891E800E292B6 /* MBProgressHUD.m in Sources */,
 				20E0DAA92668ACC200E292B6 /* AppSign.m in Sources */,
+				207CCD34266E45370084541B /* NV12.metal in Sources */,
 				20E0DB48266A23B800E292B6 /* AppSign+appSign.m in Sources */,
 				20E0DA70266891E800E292B6 /* LiveVC.m in Sources */,
-				20E0DA812668927F00E292B6 /* VideoQuality.m in Sources */,
-				20E0DA772668923C00E292B6 /* LVCEngine.m in Sources */,
+				207CCD37266E45370084541B /* LinkVRTCEngine.m in Sources */,
 				20E0DA56266891AC00E292B6 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
