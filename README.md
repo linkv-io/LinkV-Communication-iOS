@@ -46,7 +46,7 @@ pod 'LinkV-Communication'
 
 ## 1.3 添加权限和关闭ATS
 
-> SDK 依赖了摄像头，麦克风，等相关权限，需要 APP 主客户端info.plist中添加相关权限的描述。
+> SDK 依赖了摄像头、麦克风等相关权限，需要 APP 主客户端info.plist中添加相关权限的描述。
 >
 > 由于目前 SDK 还需要使用 http 域名，所以需要关闭 ATS。
 
