@@ -2,6 +2,8 @@
 
 - 商务合作与技术交流请加QQ群：**1160896626**，邮箱：**develop@linkv.sg**
 
+[![视频讲解](./LVCEngine/snapshot/视频讲解2.png "视频讲解")](https://www.loom.com/share/673ba8da0c784dafadc4d2761ab635a2)
+
 此SDK主要是对[LinkV音视频SDK](https://doc-zh.linkv.sg/ios/rtc/overview)和[IM SDK](https://doc-zh.linkv.sg/ios/im/overview)的一层封装，使其接口更加简单易用。所有封装的代码都在`LVCEngine`文件夹下，且全部开源，您可以根据您的需求任意修改里面的代码实现。当然您也可以在项目中直接引用[LinkV音视频SDK](https://doc-zh.linkv.sg/ios/rtc/overview)和[IM SDK](https://doc-zh.linkv.sg/ios/im/overview)相关的类来实现更加复杂的功能。
 
 如果你想要实现类似如下的一对一视频聊天，则使用此SDK能让你事半功倍。一对一视频聊天Demo源码：[StrangerChat](https://github.com/linkv-io/StrangerChat)
